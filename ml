@@ -38,3 +38,32 @@ for i=1:3
  end
 end
 disp(hxy);
+
+3.
+pxy=[0.1 0.15 0.05;0.2 0.07 0.08;0.01 0.04 0.3];
+py=sum(pxy);
+hy=0;
+for i=1:3
+    hy=hy+(-py(i)*log2(py(i)));
+end
+disp('Hy: ');
+disp(hy);
+px=sum(pxy,2);
+hx=0;
+for i=1:3
+    hx=hx+(-px(i)*log2(px(i)));
+end
+disp('Hx: ');
+disp(hx);
+hxy=0;
+for i=1:3
+    for j=1:3
+    hxy=hxy+(-pxy(i,j)*log2(pxy(i,j)));
+end
+end
+disp(hxy);
+h1=hxy-hx;
+h2=hxy-hy;
+disp(h1);
+ disp(h2);
+ 
